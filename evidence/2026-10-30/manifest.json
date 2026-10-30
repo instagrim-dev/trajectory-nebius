@@ -1,0 +1,75 @@
+{
+  "session": "b60b2f7410d6",
+  "public_baseline": "e6729c07c086ac5db5e2a1f163b80071e6fe8227",
+  "changed_paths": [
+    "queued/queue.go",
+    "queued/worker.go"
+  ],
+  "candidates": [
+    {
+      "candidate": "A",
+      "answer": "queue_time",
+      "parent": null,
+      "model": "nvidia/Nemotron-3_5-Lightning",
+      "provider": "nebius",
+      "response_id": "chatcmpl-5766d64a",
+      "http_status": 200,
+      "request_sha256": "357bccb998e3b0fa8a5fda7ddb2d27f0abc6e523532eb13aeae402808e5420e5",
+      "candidate_sha256": {
+        "queued/queue.go": "ad9301d311d46e757879af379a34683136914dbafa20562dfb562a4d589be984",
+        "queued/worker.go": "4c85e53a9b4b590e327ceabd75ea619870ed3bbb1af7be817edb6bfe4eab0057"
+      },
+      "tree": "c8c2879b9206048ad36a230b49ddddd17b716c5666b12f817f815efd26fa72d4",
+      "oracle_sha256": "d358bd4c9169b2d4743e0538d8ce6ca12e6dd751ecbbc4a5b5ab78c8e4bc2784",
+      "checked_at": "2026-10-30T13:50:11.790404+00:00",
+      "build_passed": true,
+      "vet_passed": true,
+      "tests_passed": [
+        "TestActiveAccess",
+        "TestAuditBeforeRelease",
+        "TestAuditFailure",
+        "TestInvalidJob",
+        "TestOwnerIntent",
+        "TestQueueDenial",
+        "TestRevokedAccess",
+        "TestTenantIsolation",
+        "TestTenantLookup"
+      ],
+      "scenario_status": "exported",
+      "scenario_output": "request: ana@acme asks for export r1 (authorized)\nenqueue: queued under policy \"queue_time\"\nrevoke: ana@acme access revoked while r1 is queued\naudit: durable write audit for r1\nprocess: status=exported events=2\nevent: audit r1\nevent: release r1\n"
+    },
+    {
+      "candidate": "B-2",
+      "answer": "delivery_time",
+      "parent": "A",
+      "model": "nvidia/Nemotron-3_5-Lightning",
+      "provider": "nebius",
+      "response_id": "chatcmpl-2fd11bfd",
+      "http_status": 200,
+      "request_sha256": "185cccf94978a71806e56243b361461f845a154a1e99d4069cbe2d8fef1c8546",
+      "candidate_sha256": {
+        "queued/queue.go": "c7c2a1e060249000d3c546b863e99d2ad0013b9535d50a8127d893a05f041389",
+        "queued/worker.go": "9dbb91fe89cede282a457bcec3540e8e366b02b82496b602597a8c62a2ecb013"
+      },
+      "tree": "4912729510be9f07bd2966e93693858da3ad047b2bd82d94fc03401f1cd2a989",
+      "oracle_sha256": "d358bd4c9169b2d4743e0538d8ce6ca12e6dd751ecbbc4a5b5ab78c8e4bc2784",
+      "checked_at": "2026-10-30T13:56:07.999414+00:00",
+      "build_passed": true,
+      "vet_passed": true,
+      "tests_passed": [
+        "TestActiveAccess",
+        "TestAuditBeforeRelease",
+        "TestAuditFailure",
+        "TestInvalidJob",
+        "TestOwnerIntent",
+        "TestQueueDenial",
+        "TestRevokedAccess",
+        "TestTenantIsolation",
+        "TestTenantLookup"
+      ],
+      "scenario_status": "access_revoked",
+      "scenario_output": "request: ana@acme asks for export r1 (authorized)\nenqueue: queued under policy \"delivery_time\"\nrevoke: ana@acme access revoked while r1 is queued\nprocess: status=access_revoked events=0\n"
+    }
+  ],
+  "note": "Published source and bounded receipt summary from the recorded native session. These generated candidates were not committed to the baseline service repository."
+}

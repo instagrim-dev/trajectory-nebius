@@ -17,6 +17,10 @@ Open `Workbench.xcodeproj`, select the `Workbench` scheme and an iPhone simulato
 
 The companion serves only `127.0.0.1:8124` and imports the allowlisted demo repository. The model path makes one Nebius `/v1/chat/completions` call per construction, with no automatic retry. It records the returned model identity, response ID, usage, request digest, and candidate source digests; raw keys are never recorded. The local Check runs `go build`, `go vet`, nine protected tests, and the visible scenario. GitHub Actions are not required for this submission.
 
+## Judge build and recorded run
+
+The [iOS Simulator test build](https://github.com/instagrim-dev/trajectory-nebius/releases/tag/v0.1-nebius-demo) runs with the local Mac companion above. The [recorded A/B evidence](evidence/2026-10-30/manifest.json) includes the Nebius response IDs, source digests, model-generated files, and independent check outcomes. In the recorded session, A used request-time permission and exported after revocation; B-2 used delivery-time permission and blocked release. Both passed build, vet, and nine protected tests. The model-generated candidates are preserved in this repository's `evidence/` directory for inspection, but were not committed to the synthetic service repository.
+
 ## Scope and provenance
 
 BMO's aggregate engine and public decision-guided synthesis design predate this hackathon. Trajectory's native workbench and standalone companion were built during the submission period. Earlier development runs used Muse and an interim Azure path; the Nebius provider and the recorded Nemotron A/B construction were added October 30, 2026. The standalone companion shown here does not demonstrate a live BMO runtime integration. This is a bounded synthetic policy choice, not arbitrary-repository synthesis or a production privacy system.
