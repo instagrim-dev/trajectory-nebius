@@ -1,33 +1,14 @@
 # Native companion
 
-Start the interim Azure OpenAI generator from the project root:
+The Nebius submission runs NVIDIA Nemotron 3.5 Lightning through Token Factory. From the project root, supply a key to the Mac host environment and start the loopback companion:
 
 ```sh
-python3 Companion/run_azure.py 8123
+export NEBIUS_API_KEY=...   # supply privately in your shell
+TRAJECTORY_GENERATOR_PROVIDER=nebius python3 Companion/server.py 8124
 ```
 
-For the hackathon's Baseten endpoint, make `BASETEN_API_KEY` available in the host environment and start the companion with:
+The iPhone app calls this local companion. `GET /status` reports the active provider, agent, and model. Construction accepts the chosen policy, makes a Nebius chat-completions call, writes only `queued/queue.go` and `queued/worker.go`, and validates the immutable source boundary before publishing the candidate to the native view. The separate **Check** action runs Go build, vet, nine protected tests, and the revoked-access scenario against the exact candidate tree and accepted rule. A generated candidate is not described as verified until Check passes.
 
-```sh
-TRAJECTORY_GENERATOR_PROVIDER=baseten python3 Companion/server.py 8123
-```
+State and receipts persist across restarts. Response IDs, model identity, usage, request digests, and source digests are recorded; the key stays in the host environment. The companion binds to `127.0.0.1` and imports only the allowlisted synthetic repository. The [recorded run](../evidence/2026-10-30/manifest.json) has two model-generated candidates and two passing independent checks.
 
-This selects Muse Code and the hackathon model `meta-models/muse-spark-open-1026` at `https://inference.baseten.co/v1`. The key stays on the host and is passed to Muse on standard input. This path still requires a successful live generation and compatibility check before it can be used as submission evidence.
-
-The launcher reads the existing host setup in
-`~/.config/bmo-azure-codex/state.json` and its sibling credential file.
-`TRAJECTORY_AZURE_CONFIG_DIR` can select another existing setup directory.
-Credentials remain in the host process environment; the native app and
-generation receipts contain provider, agent, deployment and session identities.
-
-Azure uses `codex exec` with the configured execution deployment. The bare
-`server.py` retains the original Meta/Muse default; select `baseten` explicitly
-for the hackathon endpoint.
-
-`GET /status` reports the active provider, agent and model. Construction accepts
-the chosen rule, generates only `queued/queue.go` and `queued/worker.go`, observes
-saved edits, and validates the mutation boundary. Compilation, vet, tests and
-the revoked-access scenario run through the separate **Check** action.
-
-The retained state directory and existing candidate identities are preserved
-across restarts. Publication and licensing remain **ON HOLD**.
+The source retains earlier Azure and Muse provider paths for development history. They are not the provider used in the recorded Nebius run.
