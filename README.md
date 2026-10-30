@@ -2,6 +2,8 @@
 
 Trajectory is a native iPhone/iPad decision workbench with a local Mac companion. A privacy analyst must choose whether a queued customer-records export uses the permission saved when the request was queued or re-checks permission at delivery. **NVIDIA Nemotron 3.5 Lightning through Nebius Token Factory** constructs the two permitted Go source files for the chosen rule. The app shows the actual changes, while the companion independently builds, vets, tests, and runs the request → revoke → deliver scenario. Saved candidates remain inspectable when the owner changes their answer.
 
+[Watch the 2:36 native iPhone Simulator demo](https://www.youtube.com/watch?v=gHzXK1yj2Qg) · [View the submitted Nebius project](https://devpost.com/software/trajectory-decisions-you-can-inspect) · [Download the simulator test build](https://github.com/instagrim-dev/trajectory-nebius/releases/tag/v0.1-nebius-demo)
+
 The [public synthetic service](https://github.com/instagrim-dev/trajectory-nebius-demo) is the import target. It contains the protected tests and a delivery-time baseline. No customer records are used. Model-generated code can change only `queued/queue.go` and `queued/worker.go`; the source boundary is checked before a candidate appears in the app. Passing checks are a separate action and are bound to the exact source tree and accepted rule.
 
 ## Run on a Mac
