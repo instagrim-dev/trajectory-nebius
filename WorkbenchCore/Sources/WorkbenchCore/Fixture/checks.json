@@ -1,0 +1,225 @@
+{
+ "checks": [
+  {
+   "id": "check-001",
+   "binding": {
+    "source_hash": "76426ef75011d74197eab283eb0352cad32c6c8f29b1869217ca63d592aad660",
+    "owner_answer": "queue_time",
+    "check_hash": "2d15d94f5da5366c05244340c779819edecfc4c93d6ee6a0185dec8713613856",
+    "oracle_hash": "05fd0d60b0d56d194c1bbcd283c350d7e0486c9d5962ef505f05a1437d7824eb",
+    "inputs_hash": "7a7f7bf224fd7300a334dc79414dfa7f441fba70bb2c954e7f59eb404e307cf3",
+    "go_version": "go version go1.27.1 darwin/arm64",
+    "execution_contract": "queued-export-v1;CGO=0;GOMAXPROCS=2;GOENV=off"
+   },
+   "status": "observed_pass",
+   "tests": [
+    {
+     "name": "TestOwnerIntent",
+     "result": "pass"
+    },
+    {
+     "name": "TestRevokedAccess",
+     "result": "pass"
+    },
+    {
+     "name": "TestActiveAccess",
+     "result": "pass"
+    },
+    {
+     "name": "TestAuditBeforeRelease",
+     "result": "pass"
+    },
+    {
+     "name": "TestAuditFailure",
+     "result": "pass"
+    },
+    {
+     "name": "TestTenantIsolation",
+     "result": "pass"
+    },
+    {
+     "name": "TestQueueDenial",
+     "result": "pass"
+    },
+    {
+     "name": "TestTenantLookup",
+     "result": "pass"
+    },
+    {
+     "name": "TestInvalidJob",
+     "result": "pass"
+    }
+   ],
+   "observations": [
+    {
+     "case": "revoked_after_enqueue",
+     "status": "exported",
+     "events": [
+      {
+       "kind": "audit"
+      },
+      {
+       "kind": "release"
+      }
+     ]
+    },
+    {
+     "case": "active_access",
+     "status": "exported",
+     "events": [
+      {
+       "kind": "audit"
+      },
+      {
+       "kind": "release"
+      }
+     ]
+    },
+    {
+     "case": "audit_order",
+     "status": "exported",
+     "events": [
+      {
+       "kind": "audit"
+      },
+      {
+       "kind": "release"
+      }
+     ]
+    },
+    {
+     "case": "audit_failure",
+     "status": "audit_blocked",
+     "events": []
+    },
+    {
+     "case": "cross_tenant_delivery",
+     "status": "denied",
+     "events": []
+    },
+    {
+     "case": "unauthorized_enqueue",
+     "status": "denied",
+     "events": []
+    },
+    {
+     "case": "tenant_scoped_identity",
+     "status": "denied",
+     "events": []
+    },
+    {
+     "case": "invalid_job",
+     "status": "invalid_job",
+     "events": []
+    }
+   ]
+  },
+  {
+   "id": "check-002",
+   "binding": {
+    "source_hash": "61885a86f762a6791ecab6933a26e74de9a57a204539e12aa3cfa626f555f1f2",
+    "owner_answer": "delivery_time",
+    "check_hash": "2d15d94f5da5366c05244340c779819edecfc4c93d6ee6a0185dec8713613856",
+    "oracle_hash": "b4ad7d9bebe9384a0deac31ca2291757b6a6277a8da9680e42aceecf69801cab",
+    "inputs_hash": "7a7f7bf224fd7300a334dc79414dfa7f441fba70bb2c954e7f59eb404e307cf3",
+    "go_version": "go version go1.27.1 darwin/arm64",
+    "execution_contract": "queued-export-v1;CGO=0;GOMAXPROCS=2;GOENV=off"
+   },
+   "status": "observed_pass",
+   "tests": [
+    {
+     "name": "TestOwnerIntent",
+     "result": "pass"
+    },
+    {
+     "name": "TestRevokedAccess",
+     "result": "pass"
+    },
+    {
+     "name": "TestActiveAccess",
+     "result": "pass"
+    },
+    {
+     "name": "TestAuditBeforeRelease",
+     "result": "pass"
+    },
+    {
+     "name": "TestAuditFailure",
+     "result": "pass"
+    },
+    {
+     "name": "TestTenantIsolation",
+     "result": "pass"
+    },
+    {
+     "name": "TestQueueDenial",
+     "result": "pass"
+    },
+    {
+     "name": "TestTenantLookup",
+     "result": "pass"
+    },
+    {
+     "name": "TestInvalidJob",
+     "result": "pass"
+    }
+   ],
+   "observations": [
+    {
+     "case": "revoked_after_enqueue",
+     "status": "access_revoked",
+     "events": []
+    },
+    {
+     "case": "active_access",
+     "status": "exported",
+     "events": [
+      {
+       "kind": "audit"
+      },
+      {
+       "kind": "release"
+      }
+     ]
+    },
+    {
+     "case": "audit_order",
+     "status": "exported",
+     "events": [
+      {
+       "kind": "audit"
+      },
+      {
+       "kind": "release"
+      }
+     ]
+    },
+    {
+     "case": "audit_failure",
+     "status": "audit_blocked",
+     "events": []
+    },
+    {
+     "case": "cross_tenant_delivery",
+     "status": "denied",
+     "events": []
+    },
+    {
+     "case": "unauthorized_enqueue",
+     "status": "denied",
+     "events": []
+    },
+    {
+     "case": "tenant_scoped_identity",
+     "status": "denied",
+     "events": []
+    },
+    {
+     "case": "invalid_job",
+     "status": "invalid_job",
+     "events": []
+    }
+   ]
+  }
+ ]
+}

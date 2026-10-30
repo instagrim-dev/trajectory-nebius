@@ -1,0 +1,18 @@
+{
+  "schema": "trajectory-intent/1",
+  "answer": "delivery_time",
+  "question": "If access changes while an export is queued, should the original permission stand, or should delivery check access again?",
+  "constraints": [
+    "tenant isolation",
+    "authorized enqueue",
+    "audit before release",
+    "audit failure blocks release"
+  ],
+  "history": [
+    {
+      "revision": 0,
+      "answer": "delivery_time",
+      "note": "Baseline intent: delivery-time authorization governs."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "files": {
+    ".github/workflows/ci.yml": "55ea64fc6046bd704480358519431ced910528d2f6b3e0a1ada7489638587864",
+    ".trajectory/intent.json": "16b3dd7391d72cff4fb180ba27b5107f60da2c4a14fdfb4bf33934f15051a888",
+    "README.md": "5ac0d84a0365b61d62d0d1a26813436a7e517769a0dd626ffe568f2161b10a81",
+    "cmd/exportdemo/main.go": "8f81e81976e29513815ba1daf6970b261d6eafd0b1d385c717e987accc1f5e81",
+    "go.mod": "729ca24f882f83138178fbe52085032c0453665920b5922a28c50b6830eed339",
+    "queued/domain.go": "0e23592bcf6bd451b9c3943eef7b8a7e6dc5bc6df3098668606cde2765d98fc1",
+    "queued/queue.go": "25f351f95cc9ba5a56b130ee8854470bcec2ae04b95f2ad1eacd7d1443c78040",
+    "queued/queued_test.go": "c82622302f74e4f1346417baffdc6109dee1b0c8e2da7b428ff3bada43171fe5",
+    "queued/support_test.go": "fb21ab40b7e29255cc9530747481cf857f4df5854a4ddd3c51b376cde5aaf0a4",
+    "queued/worker.go": "e8db0158b20f13137a0760d95114931b3f3ecfc9749395c901c1b3f5700bd929"
+  },
+  "intent": "delivery_time",
+  "source_commit": "5e58f25848b1b72a4d70c4b11595165eeaff7a7a",
+  "source_repo": "instagrim-dev/trajectory-live-demo"
+}
